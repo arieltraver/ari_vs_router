@@ -5,9 +5,9 @@ def pingscan(first3bytes, start, end, wait_time=2):
     for i in range(start, end):
         packet = IP(dst= first3bytes + str(i))/ICMP()
         response = sr1(packet, timeout=wait_time)
-        if response is not None and first3bytes in reply.src:
-            print("\n", reply.src, "RESPONDED\n")
-            responses.append(reply.src)
+        if response is not None and first3bytes in response.src:
+            print("\n", response.src, "RESPONDED\n")
+            responses.append(response.src)
     for response in responses:
         print(response)
 
@@ -21,7 +21,7 @@ def synscan(first3bytes, start, end, s_port=8085, d_port=80, wait_time=2):
         packet = ip_layer / tcp_layer
         response = sr1(packet, timeout = wait_time)
         if response is not None and first3bytes in response.src:
-            print("\n", reply.src, "RESPONDED\n")
+            print("\n", response.src, "RESPONDED\n")
             responses.append(response.src)
     for response in responses:
         print(response)
