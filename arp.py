@@ -1,5 +1,6 @@
 #tutorial: https://medium.datadriveninvestor.com/arp-cache-poisoning-using-scapy-d6711ecbe112 
-#this command: echo 1 > /proc/sys/net/ipv4/ip_forward.
+#this command: echo 1 > /proc/sys/net/ipv4/ip_forward
+#for mac: sudo sysctl -w net.inet.ip.forwarding=1
 #this command reveals arp table: arp -a 
 import scapy.all as scapy
 import time
