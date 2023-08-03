@@ -29,4 +29,16 @@ def synscan(first3bytes, start, end, s_port=8085, d_port=80, wait_time=2):
 
 synscan("192.168.1.", 0, 5)
 
-
+def checkPortsTCP(ip, s_port, d_port_list, wait_time): #you can provide a list of commonly used TCP ports.
+    open_ports = []
+    for d_port in d_port_list:
+        ip_layer = IP(dst=ip)
+        tcp_layer = TCP(sport=s_port, dport=d_port)
+        packet = ip_layer / tcp_layer
+        response = sr1(packet, timeout=wait_time)
+        if response is not None and ip in response.src:
+            print(response.src, "is listening on port", d_port)
+            open_ports.append(d_port)
+    for open_port in open_ports:
+        print(response)
+        
