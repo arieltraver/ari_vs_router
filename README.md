@@ -1,7 +1,7 @@
 # Ari VS Router
 ## A quest to enable SSH on my TP-link AX3000, by whatever means necessary
-From the TP Link website:<i>"SSH Services on the TP-Link products are only available for TP-Link apps. Other SSH clients cannot access to TP-Link products or adjust their settings with command lines. So please rest assured that the SSH will never cause any safety issues on your device."</i>
-We will see about that!
+From the TP Link website: *"SSH Services on the TP-Link products are only available for TP-Link apps. Other SSH clients cannot access to TP-Link products or adjust their settings with command lines. So please rest assured that the SSH will never cause any safety issues on your device."*
+<p>We will see about that!</p>
 
 ### Resources
 * [portscan tutorial](https://stackoverflow.com/questions/7541056/pinging-an-ip-range-with-scapy)
