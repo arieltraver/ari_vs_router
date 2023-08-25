@@ -1,0 +1,6 @@
+sudo apt install hydra
+cp /usr/share/wordlists/rockyou.txt.gz passwords.txt.gz
+gzip -d passwords.txt.gz
+hydra -l admin passwords.txt
+hydra -l tether passwords.txt
+hydra -l root passwords.txt
